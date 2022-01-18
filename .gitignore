@@ -1,0 +1,4 @@
+printer-20*.cfg
+backups/**
+backups
+telegram.conf
