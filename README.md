@@ -5,6 +5,7 @@ klipper config that i currently use
 - BL Touch by Waggster -> https://www.thingiverse.com/thing:3716043
 - no z axis syn belt (i use Z TILT)
 - filament runout sensor connected to X+
+- magnatic aluminud bed with PEI sheet or FR4 sheet for TPU
 
 i use fluidd as a gui
 
