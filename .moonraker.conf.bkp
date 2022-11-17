@@ -1,15 +1,12 @@
 [server]
 host = 0.0.0.0
 port = 7125
-enable_debug_logging = False
 klippy_uds_address = /tmp/klippy_uds
 
 [file_manager]
-config_path = /home/print/klipper_config
-log_path = /home/print/klipper_logs
+enable_object_processing = True
 
 [database]
-database_path = ~/.moonraker_database
 
 [machine]
 provider = systemd_dbus
@@ -17,6 +14,16 @@ provider = systemd_dbus
 [data_store]
 temperature_store_size = 600
 gcode_store_size = 1000
+
+[webcam cam_printer]
+location = printer
+service = mjpegstreamer
+target_fps = 25
+stream_url = http://klipper.lan.dom:8888/?action=stream
+snapshot_url = http://klipper.lan.dom:8888/?action=snapshot
+flip_horizontal = False
+flip_vertical = False
+rotation = 0
 
 [authorization]
 trusted_clients = 
@@ -64,4 +71,14 @@ env = ~/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
 managed_services = KlipperScreen
+
+[update_manager moonraker-obico]
+type = git_repo
+path = ~/moonraker-obico
+origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
+env = /home/print/moonraker-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	moonraker-obico
 
