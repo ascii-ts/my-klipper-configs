@@ -18,9 +18,9 @@ gcode_store_size = 1000
 [webcam cam_printer]
 location = printer
 service = mjpegstreamer
-target_fps = 25
-stream_url = http://klipper.lan.dom:8888/?action=stream
-snapshot_url = http://klipper.lan.dom:8888/?action=snapshot
+target_fps = 30
+stream_url = http://klipper.lan.dom:8080/?action=stream
+snapshot_url = http://klipper.lan.dom:8080/?action=snapshot
 flip_horizontal = False
 flip_vertical = False
 rotation = 0
@@ -71,4 +71,10 @@ env = ~/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
 managed_services = KlipperScreen
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
 
