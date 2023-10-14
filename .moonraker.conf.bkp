@@ -45,6 +45,10 @@ cors_domains =
 
 [history]
 
+[spoolman]
+server = http://192.168.2.5:9800
+sync_rate = 15
+
 [update_manager]
 channel = beta
 enable_auto_refresh = True
